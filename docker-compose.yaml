@@ -1,0 +1,116 @@
+services:
+  redis:
+    image: redis:8.6
+    ports:
+      - "6379:6379/tcp"
+
+  db:
+    image: mariadb:12.2
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    volumes:
+      - ./plugNmeet-server/mariadb-data:/var/lib/mysql
+      - ./plugNmeet-server/sql_dump/install.sql:/docker-entrypoint-initdb.d/install.sql
+
+  nats:
+    image: nats:2.12-alpine
+    command:
+      - "-DVV"
+      - "-config"
+      - "/nats-server.conf"
+    ports:
+      - "4222:4222/tcp"
+      - "8222:8222/tcp"
+    volumes:
+      - ./plugNmeet-server/nats_server.conf:/nats-server.conf
+      - nats-data:/data/jetstream
+
+  livekit:
+    image: livekit/livekit-server
+    ports:
+      - "7880:7880/tcp"
+      - "7881:7881/tcp"
+      - "7882:7882/udp"
+    volumes:
+      - ./plugNmeet-server/livekit.yaml:/app/livekit.yaml
+    command: --config "/app/livekit.yaml" --dev
+    depends_on:
+      - redis
+
+  livekit-ingress:
+    image: livekit/ingress
+    ports:
+      - "1935:1935/tcp"
+      - "8089:8089/tcp"
+    volumes:
+      - ./plugNmeet-server/ingress.yaml:/app/ingress.yaml
+    command: --config "/app/ingress.yaml"
+    depends_on:
+      - redis
+      - livekit
+
+  livekit-sip:
+    image: livekit/sip
+    ports:
+      - "5060:5060/tcp"
+      - "10000:10000/udp"
+    volumes:
+      - ./plugNmeet-server/sip.yaml:/app/sip.yaml
+    command: --config "/app/sip.yaml"
+    depends_on:
+      - livekit
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  etherpad:
+    image: mynaparrot/plugnmeet-etherpad
+    ports:
+      - "9001:9001/tcp"
+    volumes:
+      - ./plugNmeet-server/etc/etherpad/settings.json:/opt/etherpad-lite/settings.json
+    depends_on:
+      - redis
+
+  plugnmeet-client:
+    build:
+      context: ./plugNmeet-client
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - ./plugNmeet-client/src:/app/src
+      - ./plugNmeet-client/vite.config.ts:/app/vite.config.ts
+      - ./plugNmeet-client/tsconfig.json:/app/tsconfig.json
+
+  plugnmeet-api:
+    build:
+      context: ./plugNmeet-server
+      dockerfile: docker-build/Dockerfile.dev
+    ports:
+      - "8080:8080/tcp"
+    volumes:
+      - ./plugNmeet-server:/app
+      - ./plugNmeet-client/dist:/app/client/dist
+      - ./recording_files:/app/recording_files
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - nats
+      - redis
+      - db
+      - livekit
+
+  recorder:
+    build:
+      context: ./plugNmeet-recorder
+      dockerfile: docker-build/Dockerfile
+    volumes:
+      - ./plugNmeet-recorder:/app
+      - ./recording_files:/recording_files
+    depends_on:
+      - plugnmeet-api
+      - nats
+
+volumes:
+  nats-data:
