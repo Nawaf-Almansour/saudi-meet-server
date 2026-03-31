@@ -1,0 +1,11 @@
+[submodule "plugNmeet-client"]
+	path = plugNmeet-client
+	url = git@github.com:Nawaf-Almansour/plugNmeet-client.git
+
+[submodule "plugNmeet-recorder"]
+	path = plugNmeet-recorder
+	url = git@github.com:Nawaf-Almansour/plugNmeet-recorder.git
+
+[submodule "plugNmeet-server"]
+	path = plugNmeet-server
+	url = git@github.com:Nawaf-Almansour/plugNmeet-server.git
