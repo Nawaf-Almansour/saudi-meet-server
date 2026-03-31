@@ -69,6 +69,8 @@ services:
       - "9001:9001/tcp"
     volumes:
       - ./plugNmeet-server/etc/etherpad/settings.json:/opt/etherpad-lite/settings.json
+      - ./plugNmeet-server/etc/etherpad/pad_cookie.js:/opt/etherpad-lite/src/static/js/pad_cookie.js
+      - ./plugNmeet-server/etc/etherpad/ep.json:/opt/etherpad-lite/src/ep.json
     depends_on:
       - redis
 
