@@ -83,6 +83,22 @@ services:
       - ./plugNmeet-client/vite.config.ts:/app/vite.config.ts
       - ./plugNmeet-client/tsconfig.json:/app/tsconfig.json
 
+  admin-api:
+    image: node:22-slim
+    working_dir: /app
+    command: node admin-server.js
+    ports:
+      - "3100:3100/tcp"
+    environment:
+      PNM_API_KEY: "plugnmeet"
+      PNM_API_SECRET: "zumyyYWqv7KR2kUqvYdq4z4sXg7XTBD2ljT6"
+      PNM_API_HOST: "http://plugnmeet-api:8080"
+      ADMIN_PORT: "3100"
+    volumes:
+      - ./plugNmeet-client/admin-server.js:/app/admin-server.js
+    depends_on:
+      - plugnmeet-api
+
   plugnmeet-api:
     build:
       context: ./plugNmeet-server
