@@ -1,0 +1,24 @@
+server:
+  port: 4000
+  jwt_secret: "diwan-secret-key-change-in-production"
+
+database:
+  host: postgres
+  port: 5432
+  user: diwan
+  password: diwan123
+  dbname: diwan
+  sslmode: disable
+
+redis:
+  host: redis
+  port: 6379
+
+nats:
+  url: nats://nats:4222
+
+plugnmeet:
+  host: http://plugnmeet-api:8080
+  api_key: plugnmeet
+  api_secret: zumyyYWqv7KR2kUqvYdq4z4sXg7XTBD2ljT6
+  client_host: http://localhost:3000

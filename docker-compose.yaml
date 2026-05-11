@@ -130,5 +130,50 @@ services:
       - plugnmeet-api
       - nats
 
+  # ─── Diwan Services ───
+
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: diwan
+      POSTGRES_PASSWORD: diwan123
+      POSTGRES_DB: diwan
+    ports:
+      - "5432:5432/tcp"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./diwan-server/sql/001_init.sql:/docker-entrypoint-initdb.d/001_init.sql
+
+  diwan-api:
+    build:
+      context: ./diwan-server
+      dockerfile: docker-build/Dockerfile.dev
+    ports:
+      - "4000:4000/tcp"
+    volumes:
+      - ./diwan-server:/app
+    depends_on:
+      - postgres
+      - redis
+      - nats
+      - plugnmeet-api
+
+  diwan-client:
+    build:
+      context: ./diwan-client
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173/tcp"
+    volumes:
+      - ./diwan-client/src:/app/src
+      - ./diwan-client/index.html:/app/index.html
+      - ./diwan-client/vite.config.ts:/app/vite.config.ts
+      - ./diwan-client/tailwind.config.js:/app/tailwind.config.js
+      - ./diwan-client/postcss.config.js:/app/postcss.config.js
+      - ./diwan-client/tsconfig.json:/app/tsconfig.json
+    depends_on:
+      - diwan-api
+
 volumes:
   nats-data:
+  postgres-data:

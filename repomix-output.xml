@@ -42,6 +42,8 @@ The content is organized as follows:
 <directory_structure>
 plugNmeet-client/
   .git/
+    gk/
+      config
     hooks/
       applypatch-msg.sample
       commit-msg.sample
@@ -64,9 +66,72 @@ plugNmeet-client/
           main
         remotes/
           origin/
+            renovate/
+              plugnmeet-protocol-js-1.x
+            abdulkader
+            cleanup_cameraRework
+            main
+            mod
+            release-please--branches--main--components--plugnmeet-client
+            turn
+            v1
+            vb_refactor
+            version-whiteboard-redux
+          upstream/
+            renovate/
+              plugnmeet-protocol-js-1.x
+            abdulkader
+            cleanup_cameraRework
             HEAD
+            main
+            mod
+            release-please--branches--main--components--plugnmeet-client
+            turn
+            v1
+            vb_refactor
+            version-whiteboard-redux
       HEAD
     objects/
+      05/
+        a8e7ca753494d3b2cae65aef5281d0e71e5468
+      08/
+        9e4ea4068d515d3b72fe87d67cf1502d100ee4
+      11/
+        abdb45193d092abb1dba29ee77ee96abc5a92c
+      26/
+        3203f65b3b05781e184ba54ccafcd0ff401c9f
+      4e/
+        7dcd7e43ff0488e5119c8e2ae2a5e26d0e334b
+      6b/
+        d8b8f6d0225db4e0c0e4cb4d08e1afb6965017
+      73/
+        f5a19d812de694db3cca47ac38c38861b72d7f
+      74/
+        02a21f50ac5ea8d59544eee8b56fc5585d309a
+      88/
+        fe8b84f7520250ad0b8dc417e7ba3522ffc366
+      9d/
+        312f748cd047f3db78b07eb13f9feaece350e5
+      a2/
+        b39e974800092b527babe387b2933b5bb94428
+      a3/
+        a2166f01f9f91322e8615122d3fbe1527275e0
+      a9/
+        75e0dc0dd938874f5eb627d3d16f3774d9ab69
+      b8/
+        d1a333bfd3cba6ca4a4dce845f4cf2604d2de2
+      bd/
+        7d7bd258dfef8d69226bafdb04ae1588ee87fe
+      be/
+        8a55566d25c712e93982794297940a6121078d
+      c2/
+        a7c18b4e29b17459d51afcff5667595af6342a
+      d2/
+        be2953435560df7869cbd61505b00a8a025081
+      de/
+        897b5e71e4b0b82221005dcb477c6112761ee4
+      e4/
+        223f2d5ccb30a8cf67bff01845ef030169d430
       pack/
         pack-0767ff2c6cd94f5f5fc97c165ce9bc3d1cd1c95e.idx
         pack-0767ff2c6cd94f5f5fc97c165ce9bc3d1cd1c95e.pack
@@ -75,12 +140,37 @@ plugNmeet-client/
         main
       remotes/
         origin/
+          renovate/
+            plugnmeet-protocol-js-1.x
+          abdulkader
+          cleanup_cameraRework
+          main
+          mod
+          release-please--branches--main--components--plugnmeet-client
+          turn
+          v1
+          vb_refactor
+          version-whiteboard-redux
+        upstream/
+          renovate/
+            plugnmeet-protocol-js-1.x
+          abdulkader
+          cleanup_cameraRework
           HEAD
+          main
+          mod
+          release-please--branches--main--components--plugnmeet-client
+          turn
+          v1
+          vb_refactor
+          version-whiteboard-redux
+    COMMIT_EDITMSG
     config
     description
     FETCH_HEAD
     HEAD
     index
+    ORIG_HEAD
     packed-refs
   .github/
     workflows/
@@ -646,6 +736,7 @@ plugNmeet-client/
       plugnmeet-font.css
       recorder.css
       variables.css
+    admin.html
     index.html
     index.tsx
     login.html
@@ -653,6 +744,7 @@ plugNmeet-client/
   .oxlintrc.json
   .prettierrc.json
   .release-please-manifest.json
+  admin-server.js
   CHANGELOG.md
   crowdin.yml
   Dockerfile.dev
@@ -665,6 +757,8 @@ plugNmeet-client/
   vite.config.ts
 plugNmeet-recorder/
   .git/
+    gk/
+      config
     hooks/
       applypatch-msg.sample
       commit-msg.sample
@@ -682,15 +776,110 @@ plugNmeet-recorder/
     info/
       exclude
     objects/
+      01/
+        3e91bb9f6532c9077a6245403606c29d1279bb
+      05/
+        1bb0c4b80f2a016de9c5e16101ebdd3cc3a6d3
+      15/
+        11574ba93e138e5e18578624284fd19422ccd5
+      16/
+        6e042c3addcebeb00716dc1a95a4af10f17e8a
+      1c/
+        adcb33e7afe1fdbcdf31a4629050c0225b941c
+      1e/
+        f2dd8ca09290b8bb072e092ad6093f7c983f41
+      27/
+        42af386375620f946cb542aad94a52f7a1c628
+      2e/
+        62ddc58d6f3ffa427ba1fd6fe4347e4a761dd9
+      3d/
+        f5459b4900e0a7eab12efd160d6213415013e7
+      4e/
+        56848917854368ef5fa1b2798d9ad3cd369c15
+        71d76090f45c076a00699a3cabcd6ef77174ca
+      59/
+        185ea741ec4c001ec29533e2956125422945ec
+      5b/
+        bf7928e5a090458f125f093b45b92196e37f28
+      5e/
+        0d0325124a4c305c0358c85ed07cd7e456d4d8
+      73/
+        eaa87edbe7303c3ec6793cf942aba1122e02f1
+      74/
+        10a45fbe6ad9c8f774884a9acc92b020874dfc
+      75/
+        305f6e920ab019cb920c410128890a28c7d417
+      7b/
+        9a21a1b35b1e7bf8af621052dcf3bbafe2cf30
+        c517ddc93f15812f65faefcdf8e3333f66e9fd
+      80/
+        6839087cfec2e000da46de8b3c5f37ac944551
+        e701486d235bde6f2cc512e0f5b86e9af86421
+      83/
+        a6b6936e89c9a4ff60e0349244f9a44dc3e957
+      86/
+        2f1ecd50faa403e124836a692e98000362f6c1
+      8a/
+        6d06a67d9bf3d792cab058fdfd15f4812f0904
+        72ad3c21e2fa34177c63911239693f60647956
+      95/
+        c3b9671f200f720f37686287724085f25e300e
+      a9/
+        893f8f4caecc572f16bb7b47dc1512b0ae7467
+        cf1427bf9e18a8ff9846dcb49716c698a3a280
+      bf/
+        c3b4cd6173d918ca57cdcc38fb762f3867848a
+      c2/
+        5f7ed22df95ec8633c5e5d3d85ff7376161732
+      cc/
+        6849a58a39bcd5b819b210efe65c617fe0c4bb
+      ce/
+        46c238f80b0c7eca40a9bc9abb0fda4021c779
+      e5/
+        d9bab2094e2a9f7eaca5b41a6832c93cd39bfd
+      ea/
+        184cc37be04e88abd66051bab2bceb3a319866
+      fb/
+        ae23fc8b4bdc939317611487afcf13a62922d4
+      fe/
+        0ebf98c663f5fef80598e00d88472dc80c2aa0
       pack/
         pack-0d529ba03bd91912c369b940419f59d36f684435.idx
         pack-0d529ba03bd91912c369b940419f59d36f684435.pack
+        pack-abab1d0859199efb8e63ab04b3323b930b416981.idx
+        pack-abab1d0859199efb8e63ab04b3323b930b416981.pack
     refs/
       heads/
         main
       remotes/
         origin/
+          main
+        upstream/
+          dependabot/
+            go_modules/
+              github.com/
+                gofiber/
+                  fiber/
+                    v2-2.52.11
+                pion/
+                  dtls/
+                    v3-3.0.11
+          renovate/
+            docker-metadata-action-6.x
+            docker-setup-buildx-action-4.x
+            github.com-chromedp-cdproto-digest
+            ubuntu-26.x
+          chromedp
           HEAD
+          improve
+          main
+          manifest_v3
+          nodejs
+          release-please--branches--main
+          release-please--branches--main--components--plugnmeet-recorder
+      tags/
+        v2.0.3
+        v2.0.4
     config
     description
     FETCH_HEAD
@@ -773,9 +962,56 @@ plugNmeet-server/
           main
         remotes/
           origin/
+            main
+            release-please--branches--main
+          upstream/
+            renovate/
+              github.com-livekit-media-sdk-digest
             HEAD
+            main
+            release-please--branches--main
+            turn
+            v1.6
       HEAD
     objects/
+      11/
+        5b63ccd93e643c4f302655dd0f687aed167a2f
+      28/
+        0f7d8ade1e43e34aac26d7d7c465c220634c73
+      31/
+        bad669c377d1a0c3e653aa5f3e38c4294fee98
+      36/
+        3ad62098dd8dccb83a6bfc47e9db0cddac7a47
+      77/
+        299e19f88de0bf71cbabfad7eefed4be28d463
+      7c/
+        8080514cf65b18c956b50e7d8dccd50d3f7654
+      9c/
+        8086976374da0409b631039ecf09a8adfd11cd
+      a5/
+        8e0271f703eb4dbc9bd635f6660af7a95adee9
+      a6/
+        03c58172634de2596831a42f942e761f6c9f4f
+      ab/
+        856cfbbc1ead492e50d76fd3f7a27f4ef0c93d
+      af/
+        d04cddbd127a9c5b62fe083b979c66a8377323
+      b8/
+        d0d972db7485569c815ab788102aa7b0d966d4
+      c4/
+        66eb60b78a78797839d430edf3f01ba7d2e383
+      d0/
+        c5bd2b1f9b04e32d35db95a19b0cf6c8a8e5f6
+      d4/
+        f6f2994ea4c10ea07c8f41051b40f5590ac3bb
+      d6/
+        4ba4f26bdab2c028461575e118adc2db001000
+      dc/
+        320861c166dfc5b8759d692e5b4715f0fa9e84
+      de/
+        b83b026a0c5ff4d1447be6f866525004764147
+      e4/
+        1e609b26ceb35d377a755695e5b5a5526916a6
       pack/
         pack-8f6a1b6c2baf43e57f272a4bce69866392a8318d.idx
         pack-8f6a1b6c2baf43e57f272a4bce69866392a8318d.pack
@@ -784,7 +1020,17 @@ plugNmeet-server/
         main
       remotes/
         origin/
+          main
+          release-please--branches--main
+        upstream/
+          renovate/
+            github.com-livekit-media-sdk-digest
           HEAD
+          main
+          release-please--branches--main
+          turn
+          v1.6
+    COMMIT_EDITMSG
     config
     description
     FETCH_HEAD
@@ -801,6 +1047,8 @@ plugNmeet-server/
     Dockerfile.dev
   etc/
     etherpad/
+      ep.json
+      pad_cookie.js
       settings.json
   github_files/
     banner.jpg
@@ -1032,12 +1280,19 @@ plugNmeet-server/
   release-please-config.json
   renovate.json
   sip_sample.yaml
+.gitmodules
 docker-compose.yaml
 README.md
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
+
+<file path="plugNmeet-client/.git/gk/config">
+[branch "main"]
+	gk-last-accessed = 2026-03-31T16:00:44.769Z
+	gk-last-modified = 2026-03-31T16:00:44.769Z
+</file>
 
 <file path="plugNmeet-client/.git/hooks/applypatch-msg.sample">
 #!/bin/sh
@@ -1880,22 +2135,200 @@ exit 0
 
 <file path="plugNmeet-client/.git/logs/refs/heads/main">
 0000000000000000000000000000000000000000 1e434ad30c5dbffb94a023f5c1e81d58809c82e9 nawaf-space <nawaaf.almansour@gmail.com> 1774946887 +0300	clone: from https://github.com/mynaparrot/plugNmeet-client.git
+1e434ad30c5dbffb94a023f5c1e81d58809c82e9 11abdb45193d092abb1dba29ee77ee96abc5a92c nawaf-space <nawaaf.almansour@gmail.com> 1774953237 +0300	commit: Add Dockerfile.dev for client dev mode with Vite --host flag
+11abdb45193d092abb1dba29ee77ee96abc5a92c c2a7c18b4e29b17459d51afcff5667595af6342a nawaf-space <nawaaf.almansour@gmail.com> 1774972694 +0300	commit: Add admin dashboard and backend proxy
+c2a7c18b4e29b17459d51afcff5667595af6342a 88fe8b84f7520250ad0b8dc417e7ba3522ffc366 nawaf-space <nawaaf.almansour@gmail.com> 1774980021 +0300	commit: feat: Arabic RTL support and Etherpad fixes
 </file>
 
-<file path="plugNmeet-client/.git/logs/refs/remotes/origin/HEAD">
-0000000000000000000000000000000000000000 1e434ad30c5dbffb94a023f5c1e81d58809c82e9 nawaf-space <nawaaf.almansour@gmail.com> 1774946887 +0300	clone: from https://github.com/mynaparrot/plugNmeet-client.git
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/renovate/plugnmeet-protocol-js-1.x">
+0000000000000000000000000000000000000000 a0700d508c9879632660cb5d2f2a8ef628dd9d04 nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/abdulkader">
+0000000000000000000000000000000000000000 ea46de386824226a6ce6879006912c15058ef1a3 nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/cleanup_cameraRework">
+0000000000000000000000000000000000000000 89ed25cd36e4ab55b8007a589f1229f23ba308a6 nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/main">
+0000000000000000000000000000000000000000 1e434ad30c5dbffb94a023f5c1e81d58809c82e9 nawaf-space <nawaaf.almansour@gmail.com> 1774953364 +0300	fetch origin main: storing head
+1e434ad30c5dbffb94a023f5c1e81d58809c82e9 11abdb45193d092abb1dba29ee77ee96abc5a92c nawaf-space <nawaaf.almansour@gmail.com> 1774953365 +0300	update by push
+11abdb45193d092abb1dba29ee77ee96abc5a92c c2a7c18b4e29b17459d51afcff5667595af6342a nawaf-space <nawaaf.almansour@gmail.com> 1774972705 +0300	update by push
+c2a7c18b4e29b17459d51afcff5667595af6342a 88fe8b84f7520250ad0b8dc417e7ba3522ffc366 nawaf-space <nawaaf.almansour@gmail.com> 1774980046 +0300	update by push
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/mod">
+0000000000000000000000000000000000000000 325ca7b9cb791bd7c202e9bf72c2ef7122a5292c nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/release-please--branches--main--components--plugnmeet-client">
+0000000000000000000000000000000000000000 7848e099dfe4b7d52b8b1e24ca9b46fc5a609426 nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/turn">
+0000000000000000000000000000000000000000 6e72410e50251b4fb56d675cafead18e6ae00039 nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/v1">
+0000000000000000000000000000000000000000 a4389392ee0e0b002a30650ca80214e089310b6d nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/vb_refactor">
+0000000000000000000000000000000000000000 b0b446ed09d7a361d43b2982c2ae28ad30143fcc nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/origin/version-whiteboard-redux">
+0000000000000000000000000000000000000000 4d24436b3d0e03ecd92a4ef9ef33b74aa817681a nawaf-space <nawaaf.almansour@gmail.com> 1774957399 +0300	fetch: storing head
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/renovate/plugnmeet-protocol-js-1.x">
+a0700d508c9879632660cb5d2f2a8ef628dd9d04 a0700d508c9879632660cb5d2f2a8ef628dd9d04 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/renovate/plugnmeet-protocol-js-1.x to refs/remotes/upstream/renovate/plugnmeet-protocol-js-1.x
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/abdulkader">
+ea46de386824226a6ce6879006912c15058ef1a3 ea46de386824226a6ce6879006912c15058ef1a3 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/abdulkader to refs/remotes/upstream/abdulkader
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/cleanup_cameraRework">
+89ed25cd36e4ab55b8007a589f1229f23ba308a6 89ed25cd36e4ab55b8007a589f1229f23ba308a6 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/cleanup_cameraRework to refs/remotes/upstream/cleanup_cameraRework
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/HEAD">
+0000000000000000000000000000000000000000 1e434ad30c5dbffb94a023f5c1e81d58809c82e9 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/HEAD to refs/remotes/upstream/HEAD
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/main">
+1e434ad30c5dbffb94a023f5c1e81d58809c82e9 1e434ad30c5dbffb94a023f5c1e81d58809c82e9 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/main to refs/remotes/upstream/main
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/mod">
+325ca7b9cb791bd7c202e9bf72c2ef7122a5292c 325ca7b9cb791bd7c202e9bf72c2ef7122a5292c Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/mod to refs/remotes/upstream/mod
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/release-please--branches--main--components--plugnmeet-client">
+7848e099dfe4b7d52b8b1e24ca9b46fc5a609426 7848e099dfe4b7d52b8b1e24ca9b46fc5a609426 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/release-please--branches--main--components--plugnmeet-client to refs/remotes/upstream/release-please--branches--main--components--plugnmeet-client
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/turn">
+6e72410e50251b4fb56d675cafead18e6ae00039 6e72410e50251b4fb56d675cafead18e6ae00039 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/turn to refs/remotes/upstream/turn
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/v1">
+a4389392ee0e0b002a30650ca80214e089310b6d a4389392ee0e0b002a30650ca80214e089310b6d Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/v1 to refs/remotes/upstream/v1
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/vb_refactor">
+b0b446ed09d7a361d43b2982c2ae28ad30143fcc b0b446ed09d7a361d43b2982c2ae28ad30143fcc Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/vb_refactor to refs/remotes/upstream/vb_refactor
+</file>
+
+<file path="plugNmeet-client/.git/logs/refs/remotes/upstream/version-whiteboard-redux">
+4d24436b3d0e03ecd92a4ef9ef33b74aa817681a 4d24436b3d0e03ecd92a4ef9ef33b74aa817681a Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774953363 +0300	remote: renamed refs/remotes/origin/version-whiteboard-redux to refs/remotes/upstream/version-whiteboard-redux
 </file>
 
 <file path="plugNmeet-client/.git/logs/HEAD">
 0000000000000000000000000000000000000000 1e434ad30c5dbffb94a023f5c1e81d58809c82e9 nawaf-space <nawaaf.almansour@gmail.com> 1774946887 +0300	clone: from https://github.com/mynaparrot/plugNmeet-client.git
+1e434ad30c5dbffb94a023f5c1e81d58809c82e9 11abdb45193d092abb1dba29ee77ee96abc5a92c nawaf-space <nawaaf.almansour@gmail.com> 1774953237 +0300	commit: Add Dockerfile.dev for client dev mode with Vite --host flag
+11abdb45193d092abb1dba29ee77ee96abc5a92c c2a7c18b4e29b17459d51afcff5667595af6342a nawaf-space <nawaaf.almansour@gmail.com> 1774972694 +0300	commit: Add admin dashboard and backend proxy
+c2a7c18b4e29b17459d51afcff5667595af6342a 88fe8b84f7520250ad0b8dc417e7ba3522ffc366 nawaf-space <nawaaf.almansour@gmail.com> 1774980021 +0300	commit: feat: Arabic RTL support and Etherpad fixes
 </file>
 
 <file path="plugNmeet-client/.git/refs/heads/main">
+88fe8b84f7520250ad0b8dc417e7ba3522ffc366
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/renovate/plugnmeet-protocol-js-1.x">
+a0700d508c9879632660cb5d2f2a8ef628dd9d04
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/abdulkader">
+ea46de386824226a6ce6879006912c15058ef1a3
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/cleanup_cameraRework">
+89ed25cd36e4ab55b8007a589f1229f23ba308a6
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/main">
+88fe8b84f7520250ad0b8dc417e7ba3522ffc366
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/mod">
+325ca7b9cb791bd7c202e9bf72c2ef7122a5292c
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/release-please--branches--main--components--plugnmeet-client">
+7848e099dfe4b7d52b8b1e24ca9b46fc5a609426
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/turn">
+6e72410e50251b4fb56d675cafead18e6ae00039
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/v1">
+a4389392ee0e0b002a30650ca80214e089310b6d
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/vb_refactor">
+b0b446ed09d7a361d43b2982c2ae28ad30143fcc
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/origin/version-whiteboard-redux">
+4d24436b3d0e03ecd92a4ef9ef33b74aa817681a
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/renovate/plugnmeet-protocol-js-1.x">
+a0700d508c9879632660cb5d2f2a8ef628dd9d04
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/abdulkader">
+ea46de386824226a6ce6879006912c15058ef1a3
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/cleanup_cameraRework">
+89ed25cd36e4ab55b8007a589f1229f23ba308a6
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/HEAD">
+ref: refs/remotes/upstream/main
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/main">
 1e434ad30c5dbffb94a023f5c1e81d58809c82e9
 </file>
 
-<file path="plugNmeet-client/.git/refs/remotes/origin/HEAD">
-ref: refs/remotes/origin/main
+<file path="plugNmeet-client/.git/refs/remotes/upstream/mod">
+325ca7b9cb791bd7c202e9bf72c2ef7122a5292c
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/release-please--branches--main--components--plugnmeet-client">
+7848e099dfe4b7d52b8b1e24ca9b46fc5a609426
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/turn">
+6e72410e50251b4fb56d675cafead18e6ae00039
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/v1">
+a4389392ee0e0b002a30650ca80214e089310b6d
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/vb_refactor">
+b0b446ed09d7a361d43b2982c2ae28ad30143fcc
+</file>
+
+<file path="plugNmeet-client/.git/refs/remotes/upstream/version-whiteboard-redux">
+4d24436b3d0e03ecd92a4ef9ef33b74aa817681a
+</file>
+
+<file path="plugNmeet-client/.git/COMMIT_EDITMSG">
+feat: Arabic RTL support and Etherpad fixes
+
+- Set default language to ar-SA in i18n.ts
+- Add hostname fallback for etherpad Docker host in useNotepadUrl.ts
+- Set RTL direction and Arabic font in admin.html
+- Set RTL direction in login.html
 </file>
 
 <file path="plugNmeet-client/.git/config">
@@ -1906,13 +2339,16 @@ ref: refs/remotes/origin/main
 	logallrefupdates = true
 	ignorecase = true
 	precomposeunicode = true
-[remote "origin"]
+[remote "upstream"]
 	url = https://github.com/mynaparrot/plugNmeet-client.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+	fetch = +refs/heads/*:refs/remotes/upstream/*
 [branch "main"]
 	remote = origin
-	merge = refs/heads/main
 	vscode-merge-base = origin/main
+	merge = refs/heads/main
+[remote "origin"]
+	url = git@github.com:Nawaf-Almansour/plugNmeet-client.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
 </file>
 
 <file path="plugNmeet-client/.git/description">
@@ -1920,34 +2356,28 @@ Unnamed repository; edit this file 'description' to name the repository.
 </file>
 
 <file path="plugNmeet-client/.git/FETCH_HEAD">
-1e434ad30c5dbffb94a023f5c1e81d58809c82e9		branch 'main' of https://github.com/mynaparrot/plugNmeet-client
-ea46de386824226a6ce6879006912c15058ef1a3	not-for-merge	branch 'abdulkader' of https://github.com/mynaparrot/plugNmeet-client
-89ed25cd36e4ab55b8007a589f1229f23ba308a6	not-for-merge	branch 'cleanup_cameraRework' of https://github.com/mynaparrot/plugNmeet-client
-325ca7b9cb791bd7c202e9bf72c2ef7122a5292c	not-for-merge	branch 'mod' of https://github.com/mynaparrot/plugNmeet-client
-7848e099dfe4b7d52b8b1e24ca9b46fc5a609426	not-for-merge	branch 'release-please--branches--main--components--plugnmeet-client' of https://github.com/mynaparrot/plugNmeet-client
-a0700d508c9879632660cb5d2f2a8ef628dd9d04	not-for-merge	branch 'renovate/plugnmeet-protocol-js-1.x' of https://github.com/mynaparrot/plugNmeet-client
-6e72410e50251b4fb56d675cafead18e6ae00039	not-for-merge	branch 'turn' of https://github.com/mynaparrot/plugNmeet-client
-a4389392ee0e0b002a30650ca80214e089310b6d	not-for-merge	branch 'v1' of https://github.com/mynaparrot/plugNmeet-client
-b0b446ed09d7a361d43b2982c2ae28ad30143fcc	not-for-merge	branch 'vb_refactor' of https://github.com/mynaparrot/plugNmeet-client
-4d24436b3d0e03ecd92a4ef9ef33b74aa817681a	not-for-merge	branch 'version-whiteboard-redux' of https://github.com/mynaparrot/plugNmeet-client
+88fe8b84f7520250ad0b8dc417e7ba3522ffc366		branch 'main' of github.com:Nawaf-Almansour/plugNmeet-client
+ea46de386824226a6ce6879006912c15058ef1a3	not-for-merge	branch 'abdulkader' of github.com:Nawaf-Almansour/plugNmeet-client
+89ed25cd36e4ab55b8007a589f1229f23ba308a6	not-for-merge	branch 'cleanup_cameraRework' of github.com:Nawaf-Almansour/plugNmeet-client
+325ca7b9cb791bd7c202e9bf72c2ef7122a5292c	not-for-merge	branch 'mod' of github.com:Nawaf-Almansour/plugNmeet-client
+7848e099dfe4b7d52b8b1e24ca9b46fc5a609426	not-for-merge	branch 'release-please--branches--main--components--plugnmeet-client' of github.com:Nawaf-Almansour/plugNmeet-client
+a0700d508c9879632660cb5d2f2a8ef628dd9d04	not-for-merge	branch 'renovate/plugnmeet-protocol-js-1.x' of github.com:Nawaf-Almansour/plugNmeet-client
+6e72410e50251b4fb56d675cafead18e6ae00039	not-for-merge	branch 'turn' of github.com:Nawaf-Almansour/plugNmeet-client
+a4389392ee0e0b002a30650ca80214e089310b6d	not-for-merge	branch 'v1' of github.com:Nawaf-Almansour/plugNmeet-client
+b0b446ed09d7a361d43b2982c2ae28ad30143fcc	not-for-merge	branch 'vb_refactor' of github.com:Nawaf-Almansour/plugNmeet-client
+4d24436b3d0e03ecd92a4ef9ef33b74aa817681a	not-for-merge	branch 'version-whiteboard-redux' of github.com:Nawaf-Almansour/plugNmeet-client
 </file>
 
 <file path="plugNmeet-client/.git/HEAD">
 ref: refs/heads/main
 </file>
 
+<file path="plugNmeet-client/.git/ORIG_HEAD">
+11abdb45193d092abb1dba29ee77ee96abc5a92c
+</file>
+
 <file path="plugNmeet-client/.git/packed-refs">
 # pack-refs with: peeled fully-peeled sorted 
-ea46de386824226a6ce6879006912c15058ef1a3 refs/remotes/origin/abdulkader
-89ed25cd36e4ab55b8007a589f1229f23ba308a6 refs/remotes/origin/cleanup_cameraRework
-1e434ad30c5dbffb94a023f5c1e81d58809c82e9 refs/remotes/origin/main
-325ca7b9cb791bd7c202e9bf72c2ef7122a5292c refs/remotes/origin/mod
-7848e099dfe4b7d52b8b1e24ca9b46fc5a609426 refs/remotes/origin/release-please--branches--main--components--plugnmeet-client
-a0700d508c9879632660cb5d2f2a8ef628dd9d04 refs/remotes/origin/renovate/plugnmeet-protocol-js-1.x
-6e72410e50251b4fb56d675cafead18e6ae00039 refs/remotes/origin/turn
-a4389392ee0e0b002a30650ca80214e089310b6d refs/remotes/origin/v1
-b0b446ed09d7a361d43b2982c2ae28ad30143fcc refs/remotes/origin/vb_refactor
-4d24436b3d0e03ecd92a4ef9ef33b74aa817681a refs/remotes/origin/version-whiteboard-redux
 779c78a720a592efe34667fbde421287ad55c1ed refs/tags/v1.0.0
 e369f59d5f34f10e917b0308658d28fed48afc43 refs/tags/v1.0.1
 454c619de97755add823832da51907f2b2be0031 refs/tags/v1.0.2
@@ -50524,7 +50954,7 @@ export const useNotepadUrl = () => {
     }
 
     let baseUrl = sharedNotepadFeatures.host;
-    if (baseUrl.match('host.docker.internal')) {
+    if (baseUrl.match('host.docker.internal') || baseUrl.match('://etherpad:')) {
       baseUrl = 'http://localhost:9001';
     }
 
@@ -50539,7 +50969,7 @@ export const useNotepadUrl = () => {
       currentUser?.name
     }&userColor=%23${getUserColor()}&lang=${
       i18n.languages[0]
-    }&theme=${themeParam}`;
+    }&theme=${themeParam}&showChat=false&alwaysShowChat=false`;
 
     setUrl(fullUrl);
   }, [
@@ -63181,6 +63611,7 @@ i18n
   .use(HttpApi)
   .init({
     debug: !IS_PRODUCTION,
+    lng: 'ar-SA',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
@@ -68550,6 +68981,575 @@ i {
 }
 </file>
 
+<file path="plugNmeet-client/src/admin.html">
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Room Management - plugNmeet</title>
+    <script src="./assets/config.js"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/favicon.ico"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet"/>
+    <style>
+        * { padding: 0; margin: 0; box-sizing: border-box; font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }
+        body { min-height: 100vh; background-color: #f0f6fc; color: #233240; }
+        .topbar { background: #fff; border-bottom: 1px solid #c2daf2; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+        .topbar .logo { display: flex; align-items: center; gap: 12px; }
+        .topbar .logo img { height: 36px; }
+        .topbar .logo span { font-size: 18px; font-weight: 600; color: #004D90; }
+        .topbar .auth-info { font-size: 13px; color: #667; display: flex; align-items: center; gap: 12px; }
+        .topbar .auth-info .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        .tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+        .tab { padding: 10px 20px; border-radius: 12px; border: 1px solid #c2daf2; background: #fff; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+        .tab:hover { background: #e8f4fd; }
+        .tab.active { background: #00a1f2; color: #fff; border-color: #08c; }
+        .card { background: #fff; border-radius: 16px; border: 1px solid #c2daf2; overflow: hidden; margin-bottom: 20px; }
+        .card-header { padding: 16px 20px; border-bottom: 1px solid #e8f0f8; display: flex; justify-content: space-between; align-items: center; }
+        .card-header h2 { font-size: 16px; font-weight: 600; }
+        .card-body { padding: 20px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group.full { grid-column: 1 / -1; }
+        label { font-size: 13px; font-weight: 500; color: #556; }
+        input, select, textarea { border-radius: 12px; border: 1px solid #c2daf2; background: #fff; box-shadow: 0 1px 2px rgba(0,43,64,0.05); padding: 10px 14px; width: 100%; outline: none; font-size: 14px; transition: all 0.2s; }
+        input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(124,206,247,0.25); border-color: #00a1f2; }
+        textarea { resize: vertical; min-height: 60px; }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 12px; padding: 8px 0; }
+        .checkbox-item { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+        .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; border-radius: 4px; }
+        .btn { height: 40px; border-radius: 12px; padding: 0 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-primary { background: #00a1f2; color: #fff; }
+        .btn-primary:hover { background: #08c; }
+        .btn-danger { background: #fa3232; color: #fff; }
+        .btn-danger:hover { background: #cc0000; }
+        .btn-success { background: #22c55e; color: #fff; }
+        .btn-success:hover { background: #16a34a; }
+        .btn-outline { background: #fff; color: #233240; border: 1px solid #c2daf2; }
+        .btn-outline:hover { background: #f0f6fc; }
+        .btn-sm { height: 32px; padding: 0 12px; font-size: 12px; border-radius: 8px; }
+        .btn-group { display: flex; gap: 8px; margin-top: 16px; }
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { text-align: left; padding: 10px 14px; background: #f8fbfe; font-weight: 600; color: #556; border-bottom: 1px solid #e8f0f8; white-space: nowrap; }
+        td { padding: 10px 14px; border-bottom: 1px solid #f0f4f8; vertical-align: middle; }
+        tr:hover td { background: #f8fbfe; }
+        .badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+        .badge-active { background: #dcfce7; color: #166534; }
+        .badge-recording { background: #fee2e2; color: #991b1b; }
+        .badge-inactive { background: #f1f5f9; color: #64748b; }
+        .empty-state { text-align: center; padding: 48px 20px; color: #94a3b8; }
+        .empty-state svg { width: 48px; height: 48px; margin-bottom: 12px; opacity: 0.5; }
+        .empty-state h3 { font-size: 16px; margin-bottom: 4px; color: #64748b; }
+        .empty-state p { font-size: 13px; }
+        .toast { position: fixed; bottom: 24px; right: 24px; padding: 12px 20px; border-radius: 12px; color: #fff; font-size: 13px; font-weight: 500; z-index: 100; transform: translateY(100px); opacity: 0; transition: all 0.3s; }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast-success { background: #22c55e; }
+        .toast-error { background: #ef4444; }
+        .join-link { display: flex; align-items: center; gap: 8px; }
+        .join-link input { font-size: 12px; padding: 6px 10px; height: 32px; }
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 60; display: none; align-items: center; justify-content: center; }
+        .modal-overlay.show { display: flex; }
+        .modal { background: #fff; border-radius: 16px; width: 100%; max-width: 480px; overflow: hidden; }
+        .modal-header { padding: 16px 20px; border-bottom: 1px solid #e8f0f8; font-size: 15px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        .modal-header .close { background: none; border: none; font-size: 20px; cursor: pointer; color: #94a3b8; }
+        .modal-body { padding: 20px; }
+        .modal-footer { padding: 12px 20px; border-top: 1px solid #e8f0f8; display: flex; justify-content: flex-end; gap: 8px; }
+        .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .stat-card { background: #fff; border: 1px solid #c2daf2; border-radius: 14px; padding: 18px 20px; }
+        .stat-card .value { font-size: 28px; font-weight: 700; color: #004D90; }
+        .stat-card .label { font-size: 12px; color: #667; margin-top: 4px; }
+        .section-hidden { display: none; }
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .stat-cards { grid-template-columns: 1fr 1fr; }
+            .tabs { flex-wrap: wrap; }
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="logo">
+        <img src="./assets/imgs/main-logo-light.png" alt="logo"/>
+        <span>Room Management</span>
+    </div>
+    <div class="auth-info">
+        <span class="dot"></span>
+        <span>Connected</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="stat-cards" id="statsCards">
+        <div class="stat-card">
+            <div class="value" id="statActiveRooms">-</div>
+            <div class="label">Active Rooms</div>
+        </div>
+        <div class="stat-card">
+            <div class="value" id="statTotalParticipants">-</div>
+            <div class="label">Total Participants</div>
+        </div>
+        <div class="stat-card">
+            <div class="value" id="statRecording">-</div>
+            <div class="label">Recording</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" onclick="switchTab('rooms')">Active Rooms</button>
+        <button class="tab" onclick="switchTab('create')">Create Room</button>
+        <button class="tab" onclick="switchTab('join')">Quick Join</button>
+    </div>
+
+    <!-- Active Rooms Tab -->
+    <div id="tab-rooms" class="tab-content">
+        <div class="card">
+            <div class="card-header">
+                <h2>Active Rooms</h2>
+                <button class="btn btn-outline btn-sm" onclick="refreshRooms()">Refresh</button>
+            </div>
+            <div class="card-body">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Room Title</th>
+                                <th>Room ID</th>
+                                <th>Participants</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roomsTableBody">
+                            <tr><td colspan="6"><div class="empty-state"><h3>Loading...</h3></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Room Tab -->
+    <div id="tab-create" class="tab-content section-hidden">
+        <div class="card">
+            <div class="card-header">
+                <h2>Create New Room</h2>
+            </div>
+            <div class="card-body">
+                <form id="createRoomForm" onsubmit="handleCreateRoom(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="cr_room_id">Room ID</label>
+                            <input type="text" id="cr_room_id" required placeholder="e.g. meeting-001"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="cr_room_title">Room Title</label>
+                            <input type="text" id="cr_room_title" required placeholder="e.g. Team Standup"/>
+                        </div>
+                        <div class="form-group full">
+                            <label for="cr_welcome_msg">Welcome Message</label>
+                            <textarea id="cr_welcome_msg" placeholder="Welcome to the meeting!">Welcome to plugNmeet!</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="cr_max_participants">Max Participants (0 = unlimited)</label>
+                            <input type="number" id="cr_max_participants" value="0" min="0"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="cr_empty_timeout">Empty Timeout (seconds)</label>
+                            <input type="number" id="cr_empty_timeout" value="7200" min="60"/>
+                        </div>
+                        <div class="form-group full">
+                            <label>Room Features</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item"><input type="checkbox" id="ft_webcams" checked/> Webcams</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_screen_share" checked/> Screen Share</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_recording" checked/> Recording</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_chat" checked/> Chat</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_file_upload" checked/> File Upload</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_whiteboard" checked/> Whiteboard</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_notepad" checked/> Shared Notepad</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_waiting_room"/> Waiting Room</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_breakout" checked/> Breakout Rooms</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_polls" checked/> Polls</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_raise_hand" checked/> Raise Hand</label>
+                                <label class="checkbox-item"><input type="checkbox" id="ft_mute_on_start"/> Mute on Start</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Create Room</button>
+                        <button type="reset" class="btn btn-outline">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Join Tab -->
+    <div id="tab-join" class="tab-content section-hidden">
+        <div class="card">
+            <div class="card-header">
+                <h2>Quick Join</h2>
+            </div>
+            <div class="card-body">
+                <form id="joinRoomForm" onsubmit="handleQuickJoin(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="qj_room_id">Room ID</label>
+                            <input type="text" id="qj_room_id" required placeholder="e.g. meeting-001"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="qj_name">Display Name</label>
+                            <input type="text" id="qj_name" required placeholder="Your name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="qj_user_id">User ID</label>
+                            <input type="text" id="qj_user_id" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="qj_user_type">User Type</label>
+                            <select id="qj_user_type">
+                                <option value="admin">Admin</option>
+                                <option value="participant">Participant</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-success">Join Room</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Join Link Modal -->
+<div class="modal-overlay" id="joinLinkModal">
+    <div class="modal">
+        <div class="modal-header">
+            <span>Join Link Generated</span>
+            <button class="close" onclick="closeModal('joinLinkModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Share this link to join the room:</label>
+                <div class="join-link">
+                    <input type="text" id="joinLinkInput" readonly/>
+                    <button class="btn btn-outline btn-sm" onclick="copyJoinLink()">Copy</button>
+                </div>
+            </div>
+            <div style="margin-top: 12px;">
+                <button class="btn btn-primary btn-sm" onclick="openJoinLink()">Open in New Tab</button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline btn-sm" onclick="closeModal('joinLinkModal')">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+    // Admin API proxy URL (keeps API secret server-side)
+    const adminApiUrl = window.location.protocol + '//' + window.location.hostname + ':3100';
+    const clientUrl = window.location.origin;
+
+    // Auto-fill user ID
+    document.getElementById('qj_user_id').value = 'user-' + Date.now();
+
+    // Tab switching
+    function switchTab(tab) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('section-hidden'));
+        document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+        document.getElementById('tab-' + tab).classList.remove('section-hidden');
+        event.target.classList.add('active');
+        if (tab === 'rooms') refreshRooms();
+    }
+
+    // Toast notifications
+    function showToast(msg, type = 'success') {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast toast-' + type + ' show';
+        setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    // Modal
+    function closeModal(id) {
+        document.getElementById(id).classList.remove('show');
+    }
+
+    // API request via admin proxy (no secret exposed)
+    async function apiRequest(endpoint, body) {
+        const res = await fetch(adminApiUrl + '/admin-api/' + endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+        return await res.json();
+    }
+
+    // Refresh active rooms
+    async function refreshRooms() {
+        const tbody = document.getElementById('roomsTableBody');
+        tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><h3>Loading...</h3></div></td></tr>';
+
+        try {
+            const res = await apiRequest('room/list', {});
+            if (!res.status || !res.rooms || res.rooms.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><h3>No active rooms</h3><p>Create a room to get started</p></div></td></tr>';
+                updateStats(0, 0, 0);
+                return;
+            }
+
+            let totalParticipants = 0;
+            let totalRecording = 0;
+            let html = '';
+
+            for (const entry of res.rooms) {
+                const room = entry.room_info || entry;
+                const meta = typeof room.metadata === 'string' ? JSON.parse(room.metadata) : room.metadata;
+                const title = meta?.room_title || room.room_title || room.room_id;
+                const participants = parseInt(room.joined_participants) || 0;
+                const isRecording = room.is_recording === 1 || room.is_recording === true;
+                const createdAt = room.creation_time ? new Date(parseInt(room.creation_time) * 1000).toLocaleTimeString() : '-';
+
+                totalParticipants += participants;
+                if (isRecording) totalRecording++;
+
+                html += `
+                <tr>
+                    <td><strong>${escHtml(title)}</strong></td>
+                    <td><code style="font-size:12px;background:#f1f5f9;padding:2px 6px;border-radius:4px;">${escHtml(room.room_id)}</code></td>
+                    <td>${participants}</td>
+                    <td>
+                        <span class="badge badge-active">Active</span>
+                        ${isRecording ? '<span class="badge badge-recording" style="margin-left:4px;">REC</span>' : ''}
+                    </td>
+                    <td>${createdAt}</td>
+                    <td>
+                        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                            <button class="btn btn-success btn-sm" onclick="generateJoinLink('${escAttr(room.room_id)}')">Join Link</button>
+                            <button class="btn btn-danger btn-sm" onclick="endRoom('${escAttr(room.room_id)}')">End</button>
+                        </div>
+                    </td>
+                </tr>`;
+            }
+
+            tbody.innerHTML = html;
+            updateStats(res.rooms.length, totalParticipants, totalRecording);
+        } catch (e) {
+            tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><h3>Error loading rooms</h3><p>' + e.message + '</p></div></td></tr>';
+        }
+    }
+
+    function updateStats(rooms, participants, recording) {
+        document.getElementById('statActiveRooms').textContent = rooms;
+        document.getElementById('statTotalParticipants').textContent = participants;
+        document.getElementById('statRecording').textContent = recording;
+    }
+
+    // Create room
+    async function handleCreateRoom(e) {
+        e.preventDefault();
+        const body = {
+            room_id: document.getElementById('cr_room_id').value,
+            max_participants: parseInt(document.getElementById('cr_max_participants').value) || 0,
+            empty_timeout: parseInt(document.getElementById('cr_empty_timeout').value) || 7200,
+            metadata: {
+                room_title: document.getElementById('cr_room_title').value,
+                welcome_message: document.getElementById('cr_welcome_msg').value,
+                room_features: {
+                    allow_webcams: document.getElementById('ft_webcams').checked,
+                    allow_screen_share: document.getElementById('ft_screen_share').checked,
+                    mute_on_start: document.getElementById('ft_mute_on_start').checked,
+                    allow_rtmp: true,
+                    allow_view_other_webcams: true,
+                    allow_view_other_users_list: true,
+                    allow_raise_hand: document.getElementById('ft_raise_hand').checked,
+                    recording_features: {
+                        is_allow: document.getElementById('ft_recording').checked,
+                        is_allow_cloud: true,
+                        is_allow_local: true,
+                    },
+                    chat_features: {
+                        is_allow: document.getElementById('ft_chat').checked,
+                        is_allow_file_upload: document.getElementById('ft_file_upload').checked,
+                        max_file_size: 50,
+                        allowed_file_types: ['jpg', 'png', 'zip', 'pdf'],
+                    },
+                    shared_note_pad_features: {
+                        is_allow: document.getElementById('ft_notepad').checked,
+                    },
+                    whiteboard_features: {
+                        is_allow: document.getElementById('ft_whiteboard').checked,
+                    },
+                    external_media_player_features: { is_allow: true },
+                    waiting_room_features: {
+                        is_active: document.getElementById('ft_waiting_room').checked,
+                    },
+                    breakout_room_features: {
+                        is_allow: document.getElementById('ft_breakout').checked,
+                        allowed_number_rooms: 6,
+                    },
+                    display_external_link_features: { is_allow: true },
+                    polls_features: {
+                        is_allow: document.getElementById('ft_polls').checked,
+                    },
+                },
+            },
+        };
+
+        try {
+            const res = await apiRequest('room/create', body);
+            if (res.status) {
+                showToast('Room "' + body.metadata.room_title + '" created successfully!');
+                switchTabDirect('rooms');
+                refreshRooms();
+            } else {
+                showToast(res.msg || 'Failed to create room', 'error');
+            }
+        } catch (e) {
+            showToast('Error: ' + e.message, 'error');
+        }
+    }
+
+    // Generate join link
+    async function generateJoinLink(roomId, name, userId, isAdmin) {
+        name = name || 'Admin';
+        userId = userId || 'admin-' + Date.now();
+        isAdmin = isAdmin !== undefined ? isAdmin : true;
+
+        try {
+            const res = await apiRequest('room/joinToken', {
+                room_id: roomId,
+                user_info: { name: name, user_id: userId, is_admin: isAdmin },
+            });
+
+            if (res.status && res.token) {
+                const link = clientUrl + '/?access_token=' + res.token;
+                document.getElementById('joinLinkInput').value = link;
+                document.getElementById('joinLinkModal').classList.add('show');
+            } else {
+                showToast(res.msg || 'Failed to generate token', 'error');
+            }
+        } catch (e) {
+            showToast('Error: ' + e.message, 'error');
+        }
+    }
+
+    // Quick join
+    async function handleQuickJoin(e) {
+        e.preventDefault();
+        const roomId = document.getElementById('qj_room_id').value;
+        const name = document.getElementById('qj_name').value;
+        const userId = document.getElementById('qj_user_id').value;
+        const isAdmin = document.getElementById('qj_user_type').value === 'admin';
+
+        // Check if room active, create if not
+        const checkRes = await apiRequest('room/isActive', { room_id: roomId });
+        if (!checkRes.is_active) {
+            const createRes = await apiRequest('room/create', {
+                room_id: roomId,
+                metadata: {
+                    room_title: roomId,
+                    welcome_message: 'Welcome!',
+                    room_features: {
+                        allow_webcams: true, allow_screen_share: true, mute_on_start: false,
+                        allow_rtmp: true, allow_view_other_webcams: true, allow_view_other_users_list: true,
+                        recording_features: { is_allow: true, is_allow_cloud: true, is_allow_local: true },
+                        chat_features: { is_allow: true, is_allow_file_upload: true },
+                        whiteboard_features: { is_allow: true },
+                        shared_note_pad_features: { is_allow: true },
+                        breakout_room_features: { is_allow: true, allowed_number_rooms: 6 },
+                        polls_features: { is_allow: true },
+                    },
+                },
+            });
+            if (!createRes.status) {
+                showToast(createRes.msg || 'Failed to create room', 'error');
+                return;
+            }
+        }
+
+        try {
+            const res = await apiRequest('room/joinToken', {
+                room_id: roomId,
+                user_info: { name: name, user_id: userId, is_admin: isAdmin },
+            });
+            if (res.status && res.token) {
+                window.open(clientUrl + '/?access_token=' + res.token, '_blank');
+            } else {
+                showToast(res.msg || 'Failed to join', 'error');
+            }
+        } catch (e) {
+            showToast('Error: ' + e.message, 'error');
+        }
+    }
+
+    // End room
+    async function endRoom(roomId) {
+        if (!confirm('Are you sure you want to end room "' + roomId + '"?')) return;
+        try {
+            const res = await apiRequest('room/end', { room_id: roomId });
+            if (res.status) {
+                showToast('Room ended successfully');
+                refreshRooms();
+            } else {
+                showToast(res.msg || 'Failed to end room', 'error');
+            }
+        } catch (e) {
+            showToast('Error: ' + e.message, 'error');
+        }
+    }
+
+    function copyJoinLink() {
+        const input = document.getElementById('joinLinkInput');
+        input.select();
+        navigator.clipboard.writeText(input.value);
+        showToast('Link copied to clipboard!');
+    }
+
+    function openJoinLink() {
+        window.open(document.getElementById('joinLinkInput').value, '_blank');
+    }
+
+    function switchTabDirect(tab) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('section-hidden'));
+        document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+        document.getElementById('tab-' + tab).classList.remove('section-hidden');
+        document.querySelectorAll('.tab').forEach(el => {
+            if (el.textContent.toLowerCase().includes(tab === 'rooms' ? 'active' : tab)) el.classList.add('active');
+        });
+    }
+
+    function escHtml(str) {
+        const d = document.createElement('div');
+        d.textContent = str;
+        return d.innerHTML;
+    }
+
+    function escAttr(str) {
+        return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    }
+
+    // Auto-refresh every 15 seconds
+    refreshRooms();
+    setInterval(refreshRooms, 15000);
+</script>
+</body>
+</html>
+</file>
+
 <file path="plugNmeet-client/src/index.html">
 <!doctype html>
 <html lang="en">
@@ -68612,7 +69612,7 @@ if (container) {
 
 <file path="plugNmeet-client/src/login.html">
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -68937,7 +69937,7 @@ if (container) {
                             type="text"
                             name="api_key"
                             id="api_key"
-                            value=""
+                            value="plugnmeet"
                             required
                             class="form-control"
                     />
@@ -68950,7 +69950,7 @@ if (container) {
                             type="password"
                             name="api_secret"
                             id="api_secret"
-                            value=""
+                            value="zumyyYWqv7KR2kUqvYdq4z4sXg7XTBD2ljT6"
                             required
                             class="form-control"
                     />
@@ -69328,6 +70328,136 @@ yarn.lock
 }
 </file>
 
+<file path="plugNmeet-client/admin-server.js">
+import http from 'node:http';
+import crypto from 'node:crypto';
+
+const API_KEY = process.env.PNM_API_KEY || 'plugnmeet';
+const API_SECRET = process.env.PNM_API_SECRET || 'zumyyYWqv7KR2kUqvYdq4z4sXg7XTBD2ljT6';
+const PNM_HOST = process.env.PNM_API_HOST || 'http://localhost:8080';
+const PORT = process.env.ADMIN_PORT || 3100;
+
+function hmacSign(body) {
+  return crypto.createHmac('sha256', API_SECRET).update(body).digest('hex');
+}
+
+function sendJson(res, status, data) {
+  res.writeHead(status, {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  });
+  res.end(JSON.stringify(data));
+}
+
+function readBody(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on('data', (c) => chunks.push(c));
+    req.on('end', () => resolve(Buffer.concat(chunks).toString()));
+    req.on('error', reject);
+  });
+}
+
+async function proxyToPlugNmeet(authPath, body) {
+  const signature = hmacSign(body);
+  const url = `${PNM_HOST}/auth/${authPath}`;
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'API-KEY': API_KEY,
+      'HASH-SIGNATURE': signature,
+    },
+    body,
+  });
+
+  return await res.json();
+}
+
+const routes = {
+  'POST /admin-api/room/create': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('room/create', body);
+  },
+
+  'POST /admin-api/room/list': async () => {
+    return await proxyToPlugNmeet('room/getActiveRoomsInfo', '{}');
+  },
+
+  'POST /admin-api/room/isActive': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('room/isRoomActive', body);
+  },
+
+  'POST /admin-api/room/end': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('room/endRoom', body);
+  },
+
+  'POST /admin-api/room/joinToken': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('room/getJoinToken', body);
+  },
+
+  'POST /admin-api/room/info': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('room/getActiveRoomInfo', body);
+  },
+
+  'POST /admin-api/room/pastRooms': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('room/fetchPastRooms', body);
+  },
+
+  'POST /admin-api/recording/list': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('recording/fetch', body);
+  },
+
+  'POST /admin-api/recording/delete': async (req) => {
+    const body = await readBody(req);
+    return await proxyToPlugNmeet('recording/delete', body);
+  },
+};
+
+const server = http.createServer(async (req, res) => {
+  // CORS preflight
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    });
+    res.end();
+    return;
+  }
+
+  const key = `${req.method} ${req.url.split('?')[0]}`;
+  const handler = routes[key];
+
+  if (!handler) {
+    sendJson(res, 404, { status: false, msg: 'not found' });
+    return;
+  }
+
+  try {
+    const data = await handler(req);
+    sendJson(res, 200, data);
+  } catch (err) {
+    console.error(`[admin-server] Error: ${err.message}`);
+    sendJson(res, 500, { status: false, msg: err.message });
+  }
+});
+
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`[admin-server] Admin API proxy running on http://0.0.0.0:${PORT}`);
+  console.log(`[admin-server] Proxying to plugNmeet API at ${PNM_HOST}`);
+});
+</file>
+
 <file path="plugNmeet-client/CHANGELOG.md">
 # Changelog
 
@@ -69676,7 +70806,7 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["pnpm", "start"]
+CMD ["pnpm", "start", "--host"]
 </file>
 
 <file path="plugNmeet-client/LICENSE">
@@ -69921,6 +71051,16 @@ export default defineConfig({
     },
   },
   plugins: [
+    {
+      name: 'html-rewrite',
+      configureServer(server) {
+        server.middlewares.use((req, _res, next) => {
+          if (req.url === '/admin') req.url = '/admin.html';
+          if (req.url === '/login') req.url = '/login.html';
+          next();
+        });
+      },
+    },
     react(),
     tailwindcss(),
     viteStaticCopy(getStaticFilesToCopy()),
@@ -70023,9 +71163,17 @@ function getStaticFilesToCopy(): ViteStaticCopyOptions {
         src: 'login.html',
         dest: './',
       },
+      {
+        src: 'admin.html',
+        dest: './',
+      },
     ],
   };
 }
+</file>
+
+<file path="plugNmeet-recorder/.git/gk/config">
+
 </file>
 
 <file path="plugNmeet-recorder/.git/hooks/applypatch-msg.sample">
@@ -70871,8 +72019,72 @@ exit 0
 0cefa8159fb29676736e5a83a27397163315a13a
 </file>
 
-<file path="plugNmeet-recorder/.git/refs/remotes/origin/HEAD">
-ref: refs/remotes/origin/main
+<file path="plugNmeet-recorder/.git/refs/remotes/origin/main">
+0cefa8159fb29676736e5a83a27397163315a13a
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/dependabot/go_modules/github.com/gofiber/fiber/v2-2.52.11">
+57300b450dc9dd5cc6565e60948fdc5db31eef61
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/dependabot/go_modules/github.com/pion/dtls/v3-3.0.11">
+1a4139c2865c5a209818f8752e7836f1a2a8edad
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/renovate/docker-metadata-action-6.x">
+1ef2dd8ca09290b8bb072e092ad6093f7c983f41
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/renovate/docker-setup-buildx-action-4.x">
+fbae23fc8b4bdc939317611487afcf13a62922d4
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/renovate/github.com-chromedp-cdproto-digest">
+013e91bb9f6532c9077a6245403606c29d1279bb
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/renovate/ubuntu-26.x">
+1437fb519e6d6df2977174ef7e3b8f8dc68fa8a3
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/chromedp">
+5885411ac393b1efd09e66805f5fa86130c55083
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/HEAD">
+ref: refs/remotes/upstream/main
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/improve">
+a02424a1a22c8f46337f735516d3f7bffeea7c27
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/main">
+2e16cd204dbc16f81f083b0323e356e3629138e3
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/manifest_v3">
+7114580042fc627d27b3beba6e5449755161bbe7
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/nodejs">
+3d53d68777a1d5cb0f0a6e8bc21a8a78a98f4b50
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/release-please--branches--main">
+66b495da8d4db6e95ec211e47761396b6935a11f
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/remotes/upstream/release-please--branches--main--components--plugnmeet-recorder">
+733097ebdc2267ef58c937a4dd077593de14ed4b
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/tags/v2.0.3">
+c25f7ed22df95ec8633c5e5d3d85ff7376161732
+</file>
+
+<file path="plugNmeet-recorder/.git/refs/tags/v2.0.4">
+9d053f3b4a8e36ec19c689edab806dfb67cbbee4
 </file>
 
 <file path="plugNmeet-recorder/.git/config">
@@ -70883,13 +72095,16 @@ ref: refs/remotes/origin/main
 	logallrefupdates = true
 	ignorecase = true
 	precomposeunicode = true
-[remote "origin"]
+[remote "upstream"]
 	url = https://github.com/mynaparrot/plugNmeet-recorder.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+	fetch = +refs/heads/*:refs/remotes/upstream/*
 [branch "main"]
-	remote = origin
+	remote = upstream
 	merge = refs/heads/main
 	vscode-merge-base = origin/main
+[remote "origin"]
+	url = git@github.com:Nawaf-Almansour/plugNmeet-recorder.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
 </file>
 
 <file path="plugNmeet-recorder/.git/description">
@@ -70897,16 +72112,15 @@ Unnamed repository; edit this file 'description' to name the repository.
 </file>
 
 <file path="plugNmeet-recorder/.git/FETCH_HEAD">
-0cefa8159fb29676736e5a83a27397163315a13a		branch 'main' of https://github.com/mynaparrot/plugNmeet-recorder
+2e16cd204dbc16f81f083b0323e356e3629138e3		branch 'main' of https://github.com/mynaparrot/plugNmeet-recorder
 5885411ac393b1efd09e66805f5fa86130c55083	not-for-merge	branch 'chromedp' of https://github.com/mynaparrot/plugNmeet-recorder
-57300b450dc9dd5cc6565e60948fdc5db31eef61	not-for-merge	branch 'dependabot/go_modules/github.com/gofiber/fiber/v2-2.52.11' of https://github.com/mynaparrot/plugNmeet-recorder
-1a4139c2865c5a209818f8752e7836f1a2a8edad	not-for-merge	branch 'dependabot/go_modules/github.com/pion/dtls/v3-3.0.11' of https://github.com/mynaparrot/plugNmeet-recorder
 a02424a1a22c8f46337f735516d3f7bffeea7c27	not-for-merge	branch 'improve' of https://github.com/mynaparrot/plugNmeet-recorder
 7114580042fc627d27b3beba6e5449755161bbe7	not-for-merge	branch 'manifest_v3' of https://github.com/mynaparrot/plugNmeet-recorder
 3d53d68777a1d5cb0f0a6e8bc21a8a78a98f4b50	not-for-merge	branch 'nodejs' of https://github.com/mynaparrot/plugNmeet-recorder
-d3df3b2060562415394fe7f011c5e52677c8b68a	not-for-merge	branch 'release-please--branches--main' of https://github.com/mynaparrot/plugNmeet-recorder
+66b495da8d4db6e95ec211e47761396b6935a11f	not-for-merge	branch 'release-please--branches--main' of https://github.com/mynaparrot/plugNmeet-recorder
 733097ebdc2267ef58c937a4dd077593de14ed4b	not-for-merge	branch 'release-please--branches--main--components--plugnmeet-recorder' of https://github.com/mynaparrot/plugNmeet-recorder
-1aacc69167a20302e8488c268ff9067c50d58aed	not-for-merge	branch 'renovate/github.com-chromedp-cdproto-digest' of https://github.com/mynaparrot/plugNmeet-recorder
+1437fb519e6d6df2977174ef7e3b8f8dc68fa8a3	not-for-merge	branch 'renovate/ubuntu-26.x' of https://github.com/mynaparrot/plugNmeet-recorder
+9d053f3b4a8e36ec19c689edab806dfb67cbbee4	not-for-merge	tag 'v2.0.4' of https://github.com/mynaparrot/plugNmeet-recorder
 </file>
 
 <file path="plugNmeet-recorder/.git/HEAD">
@@ -70915,16 +72129,6 @@ ref: refs/heads/main
 
 <file path="plugNmeet-recorder/.git/packed-refs">
 # pack-refs with: peeled fully-peeled sorted 
-5885411ac393b1efd09e66805f5fa86130c55083 refs/remotes/origin/chromedp
-57300b450dc9dd5cc6565e60948fdc5db31eef61 refs/remotes/origin/dependabot/go_modules/github.com/gofiber/fiber/v2-2.52.11
-1a4139c2865c5a209818f8752e7836f1a2a8edad refs/remotes/origin/dependabot/go_modules/github.com/pion/dtls/v3-3.0.11
-a02424a1a22c8f46337f735516d3f7bffeea7c27 refs/remotes/origin/improve
-0cefa8159fb29676736e5a83a27397163315a13a refs/remotes/origin/main
-7114580042fc627d27b3beba6e5449755161bbe7 refs/remotes/origin/manifest_v3
-3d53d68777a1d5cb0f0a6e8bc21a8a78a98f4b50 refs/remotes/origin/nodejs
-d3df3b2060562415394fe7f011c5e52677c8b68a refs/remotes/origin/release-please--branches--main
-733097ebdc2267ef58c937a4dd077593de14ed4b refs/remotes/origin/release-please--branches--main--components--plugnmeet-recorder
-1aacc69167a20302e8488c268ff9067c50d58aed refs/remotes/origin/renovate/github.com-chromedp-cdproto-digest
 99781fd97d33a78c0607036f05669dec680fb10d refs/tags/v1.0.0
 2df40abafa76d09bfc569b5d5a349503df7070da refs/tags/v1.0.1
 541ddfc8d123811f2cc7e28c1b0d0c3897ebc2d5 refs/tags/v1.0.2
@@ -73853,7 +75057,7 @@ An example script (`post_processing_scripts/example.sh`) is provided to demonstr
 
 <file path="plugNmeet-server/.git/gk/config">
 [branch "main"]
-	gk-last-accessed = 2026-03-31T08:53:07.587Z
+	gk-last-accessed = 2026-04-06T07:12:40.273Z
 </file>
 
 <file path="plugNmeet-server/.git/hooks/applypatch-msg.sample">
@@ -74697,22 +75901,93 @@ exit 0
 
 <file path="plugNmeet-server/.git/logs/refs/heads/main">
 0000000000000000000000000000000000000000 221a183b0848c5089ed740f22ba7f3f006daa0bc nawaf-space <nawaaf.almansour@gmail.com> 1774946794 +0300	clone: from https://github.com/mynaparrot/plugNmeet-server.git
+221a183b0848c5089ed740f22ba7f3f006daa0bc deb83b026a0c5ff4d1447be6f866525004764147 nawaf-space <nawaaf.almansour@gmail.com> 1774980012 +0300	commit: fix: Etherpad integration and Arabic RTL support
 </file>
 
-<file path="plugNmeet-server/.git/logs/refs/remotes/origin/HEAD">
-0000000000000000000000000000000000000000 221a183b0848c5089ed740f22ba7f3f006daa0bc nawaf-space <nawaaf.almansour@gmail.com> 1774946794 +0300	clone: from https://github.com/mynaparrot/plugNmeet-server.git
+<file path="plugNmeet-server/.git/logs/refs/remotes/origin/main">
+0000000000000000000000000000000000000000 221a183b0848c5089ed740f22ba7f3f006daa0bc nawaf-space <nawaaf.almansour@gmail.com> 1774961876 +0300	update by push
+221a183b0848c5089ed740f22ba7f3f006daa0bc deb83b026a0c5ff4d1447be6f866525004764147 nawaf-space <nawaaf.almansour@gmail.com> 1774980045 +0300	update by push
+</file>
+
+<file path="plugNmeet-server/.git/logs/refs/remotes/origin/release-please--branches--main">
+0000000000000000000000000000000000000000 c466eb60b78a78797839d430edf3f01ba7d2e383 nawaf-space <nawaaf.almansour@gmail.com> 1774962387 +0300	fetch: storing head
+c466eb60b78a78797839d430edf3f01ba7d2e383 77299e19f88de0bf71cbabfad7eefed4be28d463 nawaf-space <nawaaf.almansour@gmail.com> 1774985362 +0300	fetch: forced-update
+</file>
+
+<file path="plugNmeet-server/.git/logs/refs/remotes/upstream/renovate/github.com-livekit-media-sdk-digest">
+814650b74d7ffd75e46828a53df86554f6449689 814650b74d7ffd75e46828a53df86554f6449689 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774957711 +0300	remote: renamed refs/remotes/origin/renovate/github.com-livekit-media-sdk-digest to refs/remotes/upstream/renovate/github.com-livekit-media-sdk-digest
+</file>
+
+<file path="plugNmeet-server/.git/logs/refs/remotes/upstream/HEAD">
+0000000000000000000000000000000000000000 221a183b0848c5089ed740f22ba7f3f006daa0bc Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774957711 +0300	remote: renamed refs/remotes/origin/HEAD to refs/remotes/upstream/HEAD
+</file>
+
+<file path="plugNmeet-server/.git/logs/refs/remotes/upstream/main">
+221a183b0848c5089ed740f22ba7f3f006daa0bc 221a183b0848c5089ed740f22ba7f3f006daa0bc Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774957711 +0300	remote: renamed refs/remotes/origin/main to refs/remotes/upstream/main
+</file>
+
+<file path="plugNmeet-server/.git/logs/refs/remotes/upstream/release-please--branches--main">
+a16f2dd6c395423fc2da5e02411dedf2652a4860 a16f2dd6c395423fc2da5e02411dedf2652a4860 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774957711 +0300	remote: renamed refs/remotes/origin/release-please--branches--main to refs/remotes/upstream/release-please--branches--main
+</file>
+
+<file path="plugNmeet-server/.git/logs/refs/remotes/upstream/turn">
+3704eade0d10d1f567adb4af9144a2ff85a7a439 3704eade0d10d1f567adb4af9144a2ff85a7a439 Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774957711 +0300	remote: renamed refs/remotes/origin/turn to refs/remotes/upstream/turn
+</file>
+
+<file path="plugNmeet-server/.git/logs/refs/remotes/upstream/v1.6">
+2bebc9752c5c841daa6d718cba2fe584e2ccc62b 2bebc9752c5c841daa6d718cba2fe584e2ccc62b Nawaf-space <nawaf-space@MacBook-Pro-Nawaf-space.local> 1774957711 +0300	remote: renamed refs/remotes/origin/v1.6 to refs/remotes/upstream/v1.6
 </file>
 
 <file path="plugNmeet-server/.git/logs/HEAD">
 0000000000000000000000000000000000000000 221a183b0848c5089ed740f22ba7f3f006daa0bc nawaf-space <nawaaf.almansour@gmail.com> 1774946794 +0300	clone: from https://github.com/mynaparrot/plugNmeet-server.git
+221a183b0848c5089ed740f22ba7f3f006daa0bc deb83b026a0c5ff4d1447be6f866525004764147 nawaf-space <nawaaf.almansour@gmail.com> 1774980012 +0300	commit: fix: Etherpad integration and Arabic RTL support
 </file>
 
 <file path="plugNmeet-server/.git/refs/heads/main">
+deb83b026a0c5ff4d1447be6f866525004764147
+</file>
+
+<file path="plugNmeet-server/.git/refs/remotes/origin/main">
+deb83b026a0c5ff4d1447be6f866525004764147
+</file>
+
+<file path="plugNmeet-server/.git/refs/remotes/origin/release-please--branches--main">
+77299e19f88de0bf71cbabfad7eefed4be28d463
+</file>
+
+<file path="plugNmeet-server/.git/refs/remotes/upstream/renovate/github.com-livekit-media-sdk-digest">
+814650b74d7ffd75e46828a53df86554f6449689
+</file>
+
+<file path="plugNmeet-server/.git/refs/remotes/upstream/HEAD">
+ref: refs/remotes/upstream/main
+</file>
+
+<file path="plugNmeet-server/.git/refs/remotes/upstream/main">
 221a183b0848c5089ed740f22ba7f3f006daa0bc
 </file>
 
-<file path="plugNmeet-server/.git/refs/remotes/origin/HEAD">
-ref: refs/remotes/origin/main
+<file path="plugNmeet-server/.git/refs/remotes/upstream/release-please--branches--main">
+a16f2dd6c395423fc2da5e02411dedf2652a4860
+</file>
+
+<file path="plugNmeet-server/.git/refs/remotes/upstream/turn">
+3704eade0d10d1f567adb4af9144a2ff85a7a439
+</file>
+
+<file path="plugNmeet-server/.git/refs/remotes/upstream/v1.6">
+2bebc9752c5c841daa6d718cba2fe584e2ccc62b
+</file>
+
+<file path="plugNmeet-server/.git/COMMIT_EDITMSG">
+fix: Etherpad integration and Arabic RTL support
+
+- Fix Etherpad hostname resolution (etherpad -> localhost) in etherpad_modify.go
+- Fix OIDC issuer URL (localhost -> etherpad) for API authentication
+- Fix Redis host (host.docker.internal -> redis)
+- Add patched pad_cookie.js to handle null cookies in iframe
+- Add patched ep.json removing broken messageHandler hook
+- Enable RTL and Arabic language in Etherpad settings
 </file>
 
 <file path="plugNmeet-server/.git/config">
@@ -74723,13 +75998,16 @@ ref: refs/remotes/origin/main
 	logallrefupdates = true
 	ignorecase = true
 	precomposeunicode = true
-[remote "origin"]
+[remote "upstream"]
 	url = https://github.com/mynaparrot/plugNmeet-server.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+	fetch = +refs/heads/*:refs/remotes/upstream/*
 [branch "main"]
 	remote = origin
-	merge = refs/heads/main
 	vscode-merge-base = origin/main
+	merge = refs/heads/main
+[remote "origin"]
+	url = git@github.com:Nawaf-Almansour/plugNmeet-server.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
 </file>
 
 <file path="plugNmeet-server/.git/description">
@@ -74737,11 +76015,8 @@ Unnamed repository; edit this file 'description' to name the repository.
 </file>
 
 <file path="plugNmeet-server/.git/FETCH_HEAD">
-221a183b0848c5089ed740f22ba7f3f006daa0bc		branch 'main' of https://github.com/mynaparrot/plugNmeet-server
-a16f2dd6c395423fc2da5e02411dedf2652a4860	not-for-merge	branch 'release-please--branches--main' of https://github.com/mynaparrot/plugNmeet-server
-814650b74d7ffd75e46828a53df86554f6449689	not-for-merge	branch 'renovate/github.com-livekit-media-sdk-digest' of https://github.com/mynaparrot/plugNmeet-server
-3704eade0d10d1f567adb4af9144a2ff85a7a439	not-for-merge	branch 'turn' of https://github.com/mynaparrot/plugNmeet-server
-2bebc9752c5c841daa6d718cba2fe584e2ccc62b	not-for-merge	branch 'v1.6' of https://github.com/mynaparrot/plugNmeet-server
+deb83b026a0c5ff4d1447be6f866525004764147		branch 'main' of github.com:Nawaf-Almansour/plugNmeet-server
+77299e19f88de0bf71cbabfad7eefed4be28d463	not-for-merge	branch 'release-please--branches--main' of github.com:Nawaf-Almansour/plugNmeet-server
 </file>
 
 <file path="plugNmeet-server/.git/HEAD">
@@ -74750,11 +76025,6 @@ ref: refs/heads/main
 
 <file path="plugNmeet-server/.git/packed-refs">
 # pack-refs with: peeled fully-peeled sorted 
-221a183b0848c5089ed740f22ba7f3f006daa0bc refs/remotes/origin/main
-a16f2dd6c395423fc2da5e02411dedf2652a4860 refs/remotes/origin/release-please--branches--main
-814650b74d7ffd75e46828a53df86554f6449689 refs/remotes/origin/renovate/github.com-livekit-media-sdk-digest
-3704eade0d10d1f567adb4af9144a2ff85a7a439 refs/remotes/origin/turn
-2bebc9752c5c841daa6d718cba2fe584e2ccc62b refs/remotes/origin/v1.6
 0f1772157d9cf565db1c1f07cfa688f293d57a6c refs/tags/1.7.0
 fe7b6ac3f730c66839b2d02270beea00022abf7c refs/tags/v1.0.0
 937b38ad79cfc24452a365ef08e8064b2c568500 refs/tags/v1.0.1
@@ -75081,6 +76351,205 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["air"]
 </file>
 
+<file path="plugNmeet-server/etc/etherpad/ep.json">
+{
+  "parts": [
+    {
+      "name": "DB",
+      "hooks": {
+        "shutdown": "ep_etherpad-lite/node/db/DB"
+      }
+    },
+    {
+      "name": "Minify",
+      "hooks": {
+        "shutdown": "ep_etherpad-lite/node/utils/Minify"
+      }
+    },
+    {
+      "name": "express",
+      "hooks": {
+        "createServer": "ep_etherpad-lite/node/hooks/express",
+        "restartServer": "ep_etherpad-lite/node/hooks/express",
+        "shutdown": "ep_etherpad-lite/node/hooks/express"
+      }
+    },
+    {
+      "name": "static",
+      "hooks": {
+        "expressPreSession": "ep_etherpad-lite/node/hooks/express/static"
+      }
+    },
+    {
+      "name": "stats",
+      "hooks": {
+        "shutdown": "ep_etherpad-lite/node/stats"
+      }
+    },
+    {
+      "name": "i18n",
+      "hooks": {
+        "expressPreSession": "ep_etherpad-lite/node/hooks/i18n"
+      }
+    },
+    {
+      "name": "specialpages",
+      "hooks": {
+        "expressCreateServer": "ep_etherpad-lite/node/hooks/express/specialpages",
+        "expressPreSession": "ep_etherpad-lite/node/hooks/express/specialpages"
+      }
+    },
+    {
+      "name": "oauth2",
+      "hooks": {
+        "expressCreateServer": "ep_etherpad-lite/node/security/OAuth2Provider"
+      }
+    },
+    {
+      "name": "padurlsanitize",
+      "hooks": {
+        "expressCreateServer": "ep_etherpad-lite/node/hooks/express/padurlsanitize"
+      }
+    },
+    {
+      "name": "apicalls",
+      "hooks": {
+        "expressPreSession": "ep_etherpad-lite/node/hooks/express/apicalls"
+      }
+    },
+    {
+      "name": "importexport",
+      "hooks": {
+        "expressCreateServer": "ep_etherpad-lite/node/hooks/express/importexport"
+      }
+    },
+    {
+      "name": "errorhandling",
+      "hooks": {
+        "expressCreateServer": "ep_etherpad-lite/node/hooks/express/errorhandling"
+      }
+    },
+    {
+      "name": "socketio",
+      "hooks": {
+        "expressCloseServer": "ep_etherpad-lite/node/hooks/express/socketio",
+        "expressCreateServer": "ep_etherpad-lite/node/hooks/express/socketio",
+        "socketio": "ep_etherpad-lite/node/handler/PadMessageHandler"
+      }
+    },
+    {
+      "name": "tests",
+      "hooks": {
+        "expressPreSession": "ep_etherpad-lite/node/hooks/express/tests"
+      }
+    },
+    {
+      "name": "admin",
+      "hooks": {
+        "expressCreateServer": "ep_etherpad-lite/node/hooks/express/admin"
+      }
+    },
+    {
+      "name": "adminplugins",
+      "hooks": {
+        "socketio": "ep_etherpad-lite/node/hooks/express/adminplugins"
+      }
+    },
+    {
+      "name": "adminsettings",
+      "hooks": {
+        "socketio": "ep_etherpad-lite/node/hooks/express/adminsettings"
+      }
+    },
+    {
+      "name": "openapi",
+      "hooks": {
+        "expressPreSession": "ep_etherpad-lite/node/hooks/express/openapi"
+      }
+    }
+  ]
+}
+</file>
+
+<file path="plugNmeet-server/etc/etherpad/pad_cookie.js">
+'use strict';
+
+/**
+ * Copyright 2009 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+const Cookies = require('./pad_utils').Cookies;
+
+exports.padcookie = new class {
+  constructor() {
+    this.cookieName_ = window.location.protocol === 'https:' ? 'prefs' : 'prefsHttp';
+    this.fallbackPrefs_ = {};
+  }
+
+  init() {
+    const prefs = this.readPrefs_() || {};
+    delete prefs.userId;
+    delete prefs.name;
+    delete prefs.colorId;
+    this.writePrefs_(prefs);
+    if (this.readPrefs_() == null) {
+      // Cookies are blocked (e.g. cross-origin iframe) — use in-memory fallback silently
+      this.fallbackPrefs_ = prefs;
+    }
+  }
+
+  readPrefs_() {
+    try {
+      const json = Cookies.get(this.cookieName_);
+      if (json == null) return null;
+      return JSON.parse(json);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  writePrefs_(prefs) {
+    try {
+      Cookies.set(this.cookieName_, JSON.stringify(prefs), {expires: 365 * 100});
+    } catch (e) {
+      // cookie write failed — update in-memory fallback
+      this.fallbackPrefs_ = prefs;
+    }
+  }
+
+  getPref(prefName) {
+    const prefs = this.readPrefs_();
+    if (prefs == null) {
+      return this.fallbackPrefs_[prefName];
+    }
+    return prefs[prefName];
+  }
+
+  setPref(prefName, value) {
+    const prefs = this.readPrefs_() || this.fallbackPrefs_ || {};
+    prefs[prefName] = value;
+    this.writePrefs_(prefs);
+  }
+
+  clear() {
+    this.writePrefs_({});
+    this.fallbackPrefs_ = {};
+  }
+}();
+</file>
+
 <file path="plugNmeet-server/etc/etherpad/settings.json">
 /**
  * THIS IS THE SETTINGS FILE THAT IS COPIED INSIDE THE DOCKER CONTAINER.
@@ -75291,7 +76760,7 @@ CMD ["air"]
 
   "dbType": "redis",
   "dbSettings": {
-    "host":       "host.docker.internal",
+    "host":       "redis",
     "port":       "6379"
   },
 
@@ -75313,10 +76782,10 @@ CMD ["air"]
     "useMonospaceFont": "${PAD_OPTIONS_USE_MONOSPACE_FONT:false}",
     "userName":         "${PAD_OPTIONS_USER_NAME:null}",
     "userColor":        "${PAD_OPTIONS_USER_COLOR:null}",
-    "rtl":              "${PAD_OPTIONS_RTL:false}",
+    "rtl":              "${PAD_OPTIONS_RTL:true}",
     "alwaysShowChat":   "${PAD_OPTIONS_ALWAYS_SHOW_CHAT:false}",
     "chatAndUsers":     "${PAD_OPTIONS_CHAT_AND_USERS:false}",
-    "lang":             "${PAD_OPTIONS_LANG:null}"
+    "lang":             "${PAD_OPTIONS_LANG:ar}"
   },
 
   /*
@@ -75426,7 +76895,7 @@ CMD ["air"]
    * The other effect will be that the logs will contain the real client's IP,
    * instead of the reverse proxy's IP.
    */
-  "trustProxy": "${TRUST_PROXY:false}",
+  "trustProxy": "${TRUST_PROXY:true}",
 
   /*
    * Settings controlling the session cookie issued by Etherpad.
@@ -75460,7 +76929,7 @@ CMD ["air"]
      * significant usability drawbacks vs. "Lax". See
      * https://stackoverflow.com/q/41841880 for discussion.
      */
-    "sameSite": "${COOKIE_SAME_SITE:Lax}",
+    "sameSite": "${COOKIE_SAME_SITE:None}",
 
     /*
      * How long (in milliseconds) after navigating away from Etherpad before the
@@ -75600,8 +77069,7 @@ CMD ["air"]
       "is_admin": false
     }
   },
-
-  /*
+    /*
    * Restrict socket.io transport methods
    */
   "socketTransportProtocols" : ["websocket", "polling"],
@@ -75726,7 +77194,7 @@ CMD ["air"]
    */
   "lowerCasePadIds": "${LOWER_CASE_PAD_IDS:false}",
   "sso": {
-    "issuer": "http://localhost:9001",
+    "issuer": "http://etherpad:9001",
     "clients": [
       {
         "client_id": "plugNmeet",
@@ -86113,10 +87581,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mynaparrot/plugnmeet-server/pkg/config"
+	"github.com/sirupsen/logrus"
 
 	"github.com/mynaparrot/plugnmeet-protocol/plugnmeet"
-	"github.com/sirupsen/logrus"
+
+	"github.com/mynaparrot/plugnmeet-server/pkg/config"
 )
 
 func (m *EtherpadModel) ChangeEtherpadStatus(r *plugnmeet.ChangeEtherpadStatusReq) error {
@@ -86180,11 +87649,14 @@ func (m *EtherpadModel) addPadToRoomMetadata(roomId string, selectedHost *config
 		return err
 	}
 
+	// Replace internal Docker hostname with localhost for client browser access
+	etherpadHost := strings.Replace(selectedHost.Host, "etherpad", "localhost", 1)
+
 	f := &plugnmeet.SharedNotePadFeatures{
 		IsAllow:       meta.RoomFeatures.SharedNotePadFeatures.IsAllow,
 		IsActive:      true,
 		NodeId:        selectedHost.Id,
-		Host:          selectedHost.Host,
+		Host:          etherpadHost,
 		NotePadId:     *c.PadId,
 		ReadOnlyPadId: *c.ReadonlyPadId,
 	}
@@ -102318,6 +103790,249 @@ sip_port: 5060
 rtp_port: 10000-20000
 </file>
 
+<file path=".gitmodules">
+[submodule "plugNmeet-client"]
+	path = plugNmeet-client
+	url = git@github.com:Nawaf-Almansour/plugNmeet-client.git
+
+[submodule "plugNmeet-recorder"]
+	path = plugNmeet-recorder
+	url = git@github.com:Nawaf-Almansour/plugNmeet-recorder.git
+
+[submodule "plugNmeet-server"]
+	path = plugNmeet-server
+	url = git@github.com:Nawaf-Almansour/plugNmeet-server.git
+</file>
+
+<file path="README.md">
+# Saudi Meet Server
+
+A self-hosted, AI-powered video conferencing platform — fork of [plugNmeet](https://github.com/mynaparrot/plugNmeet-server) built on [LiveKit](https://github.com/livekit/livekit-server) WebRTC infrastructure.
+
+---
+
+## Architecture
+
+```
+┌─────────────┐       ┌──────────────────┐       ┌───────────────┐
+│   Browser   │◄─────►│ plugnmeet-client │◄─────►│  plugnmeet-api│
+│  (React UI) │  WS   │  Vite / React    │ HTTP  │  Go / Fiber   │
+└─────────────┘       └──────────────────┘       └───────┬───────┘
+                                                         │
+                      ┌──────────────────────────────────┼──────────────────┐
+                      │                                  │                  │
+               ┌──────▼──────┐  ┌────────┐   ┌───────────▼──┐  ┌───────────▼──┐
+               │   LiveKit   │  │  NATS   │  │   MariaDB    │  │    Redis     │
+               │  (WebRTC)   │  │JetStream│  │  (persistent)│  │   (cache)    │
+               └──────┬──────┘  └────┬────┘  └──────────────┘  └──────────────┘
+                      │              │
+          ┌───────────┼──────┐       │
+          │           │      │       │
+   ┌──────▼─-─┐ ┌──────▼─┐ ┌─▼───┐ ┌─▼───────--───┐  ┌──────────┐
+   │ Ingress  │ │  SIP   │ │TURN │ │  Recorder    │  │ Etherpad │
+   │(RTMP/WHIP│ │Gateway │ │     │ │(Chrome+FFmpeg│  │(notepad) │
+   └──────────┘ └────────┘ └─────┘ └─────────────-┘  └──────────┘
+```
+
+**Data flow:** Clients connect via WebSocket to the React UI, which communicates with the Go API server over HTTP. Real-time media flows through LiveKit. NATS JetStream handles inter-service messaging (recorder commands, auth callouts). MariaDB stores rooms, recordings, and user data. Redis provides caching and pub/sub for LiveKit.
+
+---
+
+## Repository Structure
+
+```
+saudi-meet-server/
+├── docker-compose.yaml            # Unified dev compose (all services)
+│
+├── plugNmeet-server/              # Go API server (Fiber framework)
+│   ├── main.go                    # Entrypoint — config → factory → router
+│   ├── pkg/
+│   │   ├── config/                # App configuration & defaults
+│   │   ├── controllers/           # HTTP handlers (room, auth, recording, polls, etc.)
+│   │   ├── models/                # Business logic layer
+│   │   ├── services/              # External integrations
+│   │   │   ├── db/                # MariaDB queries
+│   │   │   ├── nats/              # NATS JetStream messaging
+│   │   │   ├── redis/             # Redis caching
+│   │   │   ├── livekit/           # LiveKit API calls
+│   │   │   └── insights/          # AI services (transcription, translation, summarization)
+│   │   ├── factory/               # Dependency injection (wire)
+│   │   ├── dbmodels/              # Database models
+│   │   ├── routers/               # Fiber route registration
+│   │   └── turn/                  # TURN server providers (coturn, cloudflare)
+│   ├── config_sample.yaml         # Reference configuration
+│   ├── livekit_sample.yaml        # LiveKit server config
+│   ├── nats_server_sample.conf    # NATS JetStream + auth callout config
+│   ├── sql_dump/install.sql       # Database schema init
+│   └── docker-build/              # Dockerfile (prod) + Dockerfile.dev (air hot-reload)
+│
+├── plugNmeet-client/              # React frontend (Vite + Tailwind)
+│   ├── src/                       # Application source
+│   ├── vite.config.ts             # Build config (port 3000)
+│   ├── Dockerfile.dev             # Dev container (pnpm + Vite HMR)
+│   └── package.json               # Dependencies (React 19, LiveKit client, Redux)
+│
+├── plugNmeet-recorder/            # Go recorder service
+│   ├── main.go                    # Entrypoint
+│   ├── pkg/                       # Recorder + transcoder logic
+│   ├── config_sample.yaml         # Reference configuration
+│   └── docker-build/              # Dockerfile (Chrome + FFmpeg + PulseAudio)
+│
+└── recording_files/               # Shared volume for recordings (server ↔ recorder)
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Docker** and **Docker Compose** v2+
+- Ports available: `3000`, `4222`, `5060`, `6379`, `7880–7882`, `8080`, `8089`, `8222`, `9001`
+
+### 1. Clone
+
+```bash
+git clone <repo-url> saudi-meet-server
+cd saudi-meet-server
+```
+
+### 2. Generate Config Files
+
+Copy all sample configs and adjust for Docker networking:
+
+```bash
+# Server configs
+cp plugNmeet-server/config_sample.yaml    plugNmeet-server/config.yaml
+cp plugNmeet-server/livekit_sample.yaml   plugNmeet-server/livekit.yaml
+cp plugNmeet-server/nats_server_sample.conf plugNmeet-server/nats_server.conf
+cp plugNmeet-server/ingress_sample.yaml   plugNmeet-server/ingress.yaml
+cp plugNmeet-server/sip_sample.yaml       plugNmeet-server/sip.yaml
+
+# Recorder config
+cp plugNmeet-recorder/config_sample.yaml  plugNmeet-recorder/config.yaml
+
+# Client config
+cp plugNmeet-client/src/assets/config_sample.js plugNmeet-client/src/assets/config.js
+```
+
+Update the recorder config (`plugNmeet-recorder/config.yaml`):
+- `plugNmeet_info.host` → `http://plugnmeet-api:8080`
+- `plugNmeet_info.api_key` → `plugnmeet`
+- `plugNmeet_info.api_secret` → value from `plugNmeet-server/config.yaml` → `client.secret`
+- `nats_info.nats_urls` → `nats://nats:4222`
+- `copy_to_path.main_path` → `/recording_files`
+
+### 3. Start
+
+```bash
+docker compose up --build -d
+```
+
+### 4. Verify
+
+```bash
+docker compose ps
+```
+
+All 10 services should be running:
+
+| Service | Port | Description |
+|---|---|---|
+| **plugnmeet-api** | `8080` | Go API server (air hot-reload) |
+| **plugnmeet-client** | `3000` | React UI (Vite HMR) |
+| **livekit** | `7880` | WebRTC SFU |
+| **livekit-ingress** | `1935`, `8089` | RTMP/WHIP ingress |
+| **livekit-sip** | `5060` | SIP gateway |
+| **nats** | `4222`, `8222` | JetStream messaging + WebSocket |
+| **redis** | `6379` | Cache |
+| **db** | `3306` (internal) | MariaDB |
+| **etherpad** | `9001` | Shared notepad |
+| **recorder** | — | Chrome-based recording + transcoding |
+
+> **Note:** The recorder may exit on first start if NATS isn't ready yet. Run `docker compose restart recorder` if needed.
+
+---
+
+## Configuration
+
+### Server (`plugNmeet-server/config.yaml`)
+
+| Section | Purpose |
+|---|---|
+| `client` | API port, api_key/secret, webhook, prometheus |
+| `livekit_info` | LiveKit connection (host, api_key, secret) |
+| `redis_info` | Redis host, auth, sentinel support |
+| `database_info` | MariaDB connection, replicas |
+| `nats_info` | NATS URLs, WebSocket URLs, JetStream subjects, auth keys |
+| `insights` | AI providers (Azure Speech, Google Gemini) for transcription, translation, summarization |
+| `shared_notepad` | Etherpad hosts |
+| `recorder_info` | Recording files path, token validity |
+
+### Recorder (`plugNmeet-recorder/config.yaml`)
+
+| Section | Purpose |
+|---|---|
+| `recorder` | ID, mode (both/recorderOnly/transcoderOnly), resolution, limits |
+| `plugNmeet_info` | Server connection (host, api_key, api_secret) |
+| `nats_info` | NATS connection for job dispatch |
+| `ffmpeg_settings` | Codec presets for recording, post-processing, RTMP |
+
+### Client (`plugNmeet-client/src/assets/config.js`)
+
+Sets `window.plugNmeetConfig` with server URL, codec preferences, resolution defaults, and UI customization.
+
+---
+
+## Production Notes
+
+- **Do not use the dev compose in production.** Build production images using the non-dev Dockerfiles.
+- **Secrets:** Rotate all default keys/secrets in `config.yaml`, `livekit.yaml`, and `nats_server.conf` before deploying.
+- **TLS:** Place a reverse proxy (nginx, Caddy, Traefik) in front for HTTPS termination.
+- **NATS WebSocket:** The `nats_ws_urls` in server config must be reachable by end-user browsers (public URL with TLS).
+- **Recordings:** Both `plugnmeet-api` and `recorder` must share the same `recording_files` volume/path.
+- **Scaling:** LiveKit, NATS, and Redis all support clustering. The server supports MariaDB read replicas.
+- **AI Insights:** Requires Azure Speech SDK credentials (transcription/translation) and Google Gemini API key (AI chat/summarization). Configure in `config.yaml` → `insights`.
+
+---
+
+## API Responsibilities
+
+The Go server exposes a REST API on port `8080`. Key controller groups:
+
+| Controller | Endpoints | Purpose |
+|---|---|---|
+| `room` | Create, join, end, fetch rooms | Room lifecycle management |
+| `recording` | Start, stop, list, download | MP4 recording & RTMP broadcast |
+| `user` | Mute, remove, switch presenter | In-room user management |
+| `polls` | Create, vote, close | Live polling |
+| `analytics` | Fetch session analytics | Post-meeting engagement data |
+| `artifact` | List, download, delete | AI-generated summaries & transcripts |
+| `insights` | Transcription, translation, synthesis | Real-time AI features |
+| `auth` | Token generation, validation | JWT-based room access |
+| `bbb` | BigBlueButton-compatible endpoints | BBB API compatibility layer |
+| `webhook` | LiveKit event relay | Server-to-server event delivery |
+| `nats_auth` | Auth callout handler | NATS client authentication |
+
+Full API documentation: [plugnmeet.org/docs/api](https://www.plugnmeet.org/docs/api/intro)
+
+---
+
+## Contributing
+
+1. Fork this repository
+2. Create a feature branch from `main`
+3. Make changes — the dev compose provides hot-reload for both server (Go/air) and client (Vite HMR)
+4. Run existing tests: `cd plugNmeet-server && go test ./...`
+5. Submit a pull request
+
+---
+
+## License
+
+MIT — see [LICENSE](plugNmeet-server/LICENSE)
+</file>
+
 <file path="docker-compose.yaml">
 services:
   redis:
@@ -102390,6 +104105,8 @@ services:
       - "9001:9001/tcp"
     volumes:
       - ./plugNmeet-server/etc/etherpad/settings.json:/opt/etherpad-lite/settings.json
+      - ./plugNmeet-server/etc/etherpad/pad_cookie.js:/opt/etherpad-lite/src/static/js/pad_cookie.js
+      - ./plugNmeet-server/etc/etherpad/ep.json:/opt/etherpad-lite/src/ep.json
     depends_on:
       - redis
 
@@ -102404,6 +104121,22 @@ services:
       - ./plugNmeet-client/vite.config.ts:/app/vite.config.ts
       - ./plugNmeet-client/tsconfig.json:/app/tsconfig.json
 
+  admin-api:
+    image: node:22-slim
+    working_dir: /app
+    command: node admin-server.js
+    ports:
+      - "3100:3100/tcp"
+    environment:
+      PNM_API_KEY: "plugnmeet"
+      PNM_API_SECRET: "zumyyYWqv7KR2kUqvYdq4z4sXg7XTBD2ljT6"
+      PNM_API_HOST: "http://plugnmeet-api:8080"
+      ADMIN_PORT: "3100"
+    volumes:
+      - ./plugNmeet-client/admin-server.js:/app/admin-server.js
+    depends_on:
+      - plugnmeet-api
+
   plugnmeet-api:
     build:
       context: ./plugNmeet-server
@@ -102414,6 +104147,8 @@ services:
       - ./plugNmeet-server:/app
       - ./plugNmeet-client/dist:/app/client/dist
       - ./recording_files:/app/recording_files
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - nats
       - redis
@@ -102433,10 +104168,6 @@ services:
 
 volumes:
   nats-data:
-</file>
-
-<file path="README.md">
-# saudi-meet-server
 </file>
 
 </files>
